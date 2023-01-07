@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:QPacity.Styles">
+    
+    <!-- Core Colors -->
+    <Color x:Key="CoreDark">#151515</Color>
+    <SolidColorBrush x:Key="CoreDarkBrush" Color="{StaticResource CoreDark}"/>
+
+    <Color x:Key="CoreMedium">#dddddd</Color>
+    <SolidColorBrush x:Key="CoreMediumBrush" Color="{StaticResource CoreMedium}"/>
+
+    <Color x:Key="CoreOffLight">#eeeeee</Color>
+    <SolidColorBrush x:Key="CoreOffLightBrush" Color="{StaticResource CoreOffLight}"/>
+
+    <Color x:Key="CoreLight">#f5f5f5</Color>
+    <SolidColorBrush x:Key="CoreLightBrush" Color="{StaticResource CoreLight}"/>
+
+    <!-- Application-Specific Colors -->
+    <Color x:Key="CoreGreen">#60CC40</Color>
+    <SolidColorBrush x:Key="CoreGreenBrush" Color="{StaticResource CoreGreen}"/>
+
+    <Color x:Key="CoreLightGreen">#80DD50</Color>
+    <SolidColorBrush x:Key="CoreLightGreenBrush" Color="{StaticResource CoreLightGreen}"/>
+
+    <Color x:Key="CoreBlue">#3296DD</Color>
+    <SolidColorBrush x:Key="CoreBlueBrush" Color="{StaticResource CoreBlue}"/>
+
+    <Color x:Key="CoreYellow">#fce33d</Color>
+    <SolidColorBrush x:Key="CoreYellowBrush" Color="{StaticResource CoreYellow}"/>
+
+    <Color x:Key="CoreRed">#FB3640</Color>
+    <SolidColorBrush x:Key="CoreRedBrush" Color="{StaticResource CoreRed}"/>
+
+</ResourceDictionary>

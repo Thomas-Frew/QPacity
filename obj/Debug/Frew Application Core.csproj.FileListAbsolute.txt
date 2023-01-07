@@ -1,0 +1,28 @@
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\bin\Debug\Frew Application Core.exe.config
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\bin\Debug\Frew Application Core.exe
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\bin\Debug\Frew Application Core.pdb
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core.csprojResolveAssemblyReference.cache
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\MainWindow.g.cs
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\App.g.cs
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core_MarkupCompile.cache
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core_MarkupCompile.lref
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\MainWindow.baml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Styles\Colors.baml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Styles\Fonts.baml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Styles\Scroll.baml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core.g.resources
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew_Application_Core.Properties.Resources.resources
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core.csproj.GenerateResource.Cache
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core.exe
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core.pdb
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\App.baml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Styles\Buttons.baml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Styles\Texts.baml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\bin\Debug\PropertyChanged.dll
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\bin\Debug\PropertyChanged.xml
+C:\Users\THOMASF001\Desktop\Frewfiles 5.0 - The Ultimate Ultimatum\Frew's Coding Portal\C#\Frew Application Core\obj\Debug\Frew Application Core.csproj.Fody.CopyLocal.cache
+C:\Users\THOMASF001\Documents\Year 12 Work\Digital Technologies (Goldfinch)\Task 6 - Afloordable\QCapcity\bin\Debug\Frew Application Core.exe.config
+C:\Users\THOMASF001\Documents\Year 12 Work\Digital Technologies (Goldfinch)\Task 6 - Afloordable\QCapcity\obj\Debug\Frew Application Core.exe
+C:\Users\THOMASF001\Documents\Year 12 Work\Digital Technologies (Goldfinch)\Task 6 - Afloordable\QCapcity\obj\Debug\Frew Application Core.pdb
+C:\Users\THOMASF001\Documents\Year 12 Work\Digital Technologies (Goldfinch)\Task 6 - Afloordable\QCapcity\bin\Debug\QPacity.exe.config

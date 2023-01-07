@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="QPacity.GuestItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QPacity"
+             mc:Ignorable="d" 
+             Height="60" d:DesignWidth="400">
+
+    <Grid>
+        <!-- Column Organisation -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Guest Properties -->
+        <TextBlock Grid.Column="0" Style="{StaticResource CoreBody}" HorizontalAlignment="Left" Text="{Binding Name}"/>
+        <TextBlock Grid.Column="1" Style="{StaticResource CoreBody}" HorizontalAlignment="Left" Text="{Binding PhoneNumber}"/>
+
+        <!-- Guest Management Buttons -->
+        <Button Grid.Column="2" Style="{StaticResource SymbolButton}" Content="&#xf503;" Command="{Binding RemoveGuestCommand}"/>
+        <Button Grid.Column="3" Style="{StaticResource SymbolButton}" Content="&#xf506;" Command="{Binding BanGuestCommand}"/>
+        <Button Grid.Column="4" Style="{StaticResource SymbolButton}" Foreground="{Binding Reported, Converter={local:BooleanToBlackGreenBrushConverter}}"  Content="&#xf024;" Command="{Binding ReportGuestCommand}"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,39 @@
+﻿<Page x:Class="QPacity.CurrentGuestsHelp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QPacity"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700">
+
+    <!-- Help Scroll Bar -->
+    <ScrollViewer Background="{StaticResource CoreLightBrush}" UseLayoutRounding="True" VerticalScrollBarVisibility="Auto">
+        
+        <!-- Help Content -->
+        <StackPanel Margin="5">
+            <HeaderedContentControl Style="{StaticResource IconBlockBody}" Header="&#xf0c0;">
+                Manage your event's guests by pressing the Current Guests button, opening its pop-up.
+            </HeaderedContentControl>
+
+            <TextBlock Style="{StaticResource BlockBody}">
+                The names and phone numbers of your event's current guests are loaded as a list.
+            </TextBlock>
+
+            <HeaderedContentControl Style="{StaticResource IconBlockBody}" Header="&#xf056;">
+                To manually remove a guest from the room, press the minus icon.
+            </HeaderedContentControl>
+
+            <HeaderedContentControl Style="{StaticResource IconBlockBody}" Header="&#xf024;">
+                To report a guest for breaching COVID restrictions, press the flag icon.
+            </HeaderedContentControl>
+
+            <HeaderedContentControl Style="{StaticResource WarningBlock}">
+                <TextBlock Style="{StaticResource BlockBodyLight}">
+                    QPacity requires an internet connection to report users.
+                    A report was succesfully issued if the flag icon turns green.
+                </TextBlock>
+            </HeaderedContentControl>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

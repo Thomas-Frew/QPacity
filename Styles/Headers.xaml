@@ -1,0 +1,162 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:QPacity">
+
+    <!-- Pop-up Headers -->
+    <Style x:Key="PopUpWrapper" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HeaderedContentControl">
+                    <Grid Background="Transparent">
+                        <Grid Height="550" Width="500" >
+                            <Border Background="{StaticResource CoreMediumBrush}">
+                                <Border.Effect>
+                                    <DropShadowEffect Opacity="0.5" BlurRadius="20"/>
+                                </Border.Effect>
+                            </Border>
+
+                            <Border>
+                                <Grid Background="{StaticResource CoreLightBrush}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Background="{StaticResource CoreDarkBrush}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Style="{StaticResource CoreHeader}" Foreground="{StaticResource CoreLightBrush}" Grid.ColumnSpan="2" Text="{TemplateBinding Header}"/>
+                                        <Button Style="{StaticResource LightSymbolButton}" Grid.Column="1" Content="&#xf057;" Command="{Binding ClosePopUpCommand}"/>
+                                    </Grid>
+
+                                    <Grid Grid.Row="1">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HelpPopUpWrapper" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HeaderedContentControl">
+                    <Grid Background="Transparent">
+                        <Grid Height="550" Width="700">
+                            <Border Background="{StaticResource CoreMediumBrush}">
+                                <Border.Effect>
+                                    <DropShadowEffect Opacity="0.5" BlurRadius="20"/>
+                                </Border.Effect>
+                            </Border>
+
+                            <Border>
+                                <Grid Background="{StaticResource CoreLightBrush}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="60"/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Header -->
+                                    <Grid Background="{StaticResource CoreDarkBrush}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Style="{StaticResource CoreHeader}" Foreground="{StaticResource CoreLightBrush}" Grid.ColumnSpan="2" Text="{TemplateBinding Header}"/>
+                                        <Button Style="{StaticResource LightSymbolButton}" Grid.Column="1" Content="&#xf057;" Command="{Binding ClosePopUpCommand}"/>
+                                    </Grid>
+
+                                    <!-- Content -->
+                                    <Grid Grid.Row="1">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </Grid>
+
+                                    <!-- Page Navigation -->
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Button Style="{StaticResource SymbolButton}" Grid.Column="0" HorizontalAlignment="Right" Content="&#xf0a8;" Command="{Binding DecrementPageCommand}"/>
+                                        <TextBlock Style="{StaticResource BoldSeparator}" Grid.Column="1" Text="{Binding CurrentPage, Converter={local:HelpPageToPageNumberContentConverter}}"/>
+                                        <Button Style="{StaticResource SymbolButton}" Grid.Column="2" HorizontalAlignment="Left"  Content="&#xf0a9;" Command="{Binding IncrementPageCommand}"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Help Page Headers -->
+    <Style x:Key="IconBlockBody" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HeaderedContentControl">
+                    <Grid Margin="0 0 5 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Style="{StaticResource BlockBody}" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Run Style="{StaticResource InlineSymbol}" Text="{TemplateBinding Header}"/>
+                        </TextBlock>
+
+                        <TextBlock Grid.Column="1" Style="{StaticResource BlockBody}" Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WarningBlock" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HeaderedContentControl">
+                    <StackPanel Background="{StaticResource CoreRedBrush}" Margin="0 10 5 10">
+                        <!-- Title Section -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="42">
+                            <TextBlock Style="{StaticResource BlockSymbol}" Foreground="{StaticResource CoreLightBrush}" Text="&#xf071;" Margin="5 5 5 0"/>
+                            <TextBlock Style="{StaticResource BlockTitle}" Foreground="{StaticResource CoreLightBrush}" Width="100" VerticalAlignment="Bottom" Text="Warning!"/>
+                        </StackPanel>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" Margin="5 0"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ProTipBlock" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HeaderedContentControl">
+                    <StackPanel Background="{StaticResource CoreBlueBrush}" Margin="0 10 5 10">
+                        <!-- Title Section -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="42">
+                            <TextBlock Style="{StaticResource BlockSymbol}" Foreground="{StaticResource CoreLightBrush}" Text="&#xf0eb;" Margin="5 5 5 0"/>
+                            <TextBlock Style="{StaticResource BlockTitle}" Foreground="{StaticResource CoreLightBrush}" Width="100" VerticalAlignment="Bottom" Text="Pro Tip!"/>
+                        </StackPanel>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" Margin="5 0"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,60 @@
+﻿<local:BasePopUp x:Class="QPacity.SettingsPopUp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QPacity"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="500">
+
+    <!-- The pop-up toolbar wrapper -->
+    <HeaderedContentControl Style="{StaticResource PopUpWrapper}" Header="Settings">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <!-- COVID Restriction Title -->
+            <TextBlock Grid.Row="0" Style="{StaticResource BoldSeparator}" Text="COVID Restriction Level"/>
+
+            <!-- COVID Restriction -->
+            <ComboBox Grid.Row="1" ItemsSource="{Binding RestrictionLevels}" SelectedIndex="{Binding RestrictionLevelIndex}"/>
+
+            <!-- Event Property Titles -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Event Type Title -->
+                <TextBlock Grid.Column="0" Style="{StaticResource BoldSeparator}" Text="Event Type"/>
+
+                <!-- Density Title -->
+                <TextBlock Grid.Column="1" Style="{StaticResource BoldSeparator}" Text="Seating Plan"/>
+            </Grid>
+
+            <!-- Event Property Inputs -->
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Event Type -->
+                <ComboBox Grid.Column="0" ItemsSource="{Binding EventTypes}" SelectedIndex="{Binding EventTypeIndex}"/>
+                <!-- Event Type -->
+                <ComboBox Grid.Column="1" ItemsSource="{Binding SeatingPlans}" SelectedIndex="{Binding SeatingPlanIndex}"/>
+            </Grid>
+
+            <!-- Issue QPacity code Button -->
+            <Button Grid.Row="5" Style="{StaticResource BlackButton}" Background="{Binding DefaultScannerStatus, Converter={local:ScannerStatusToRedGreenBrushConverter}}" Content="{Binding DefaultScannerStatus, Converter={local:ScannerStatusToEnabledButtonContentConverter}}" Command="{Binding InvertDefaultScannerStatusCommand}"/>
+        </Grid>
+    </HeaderedContentControl>
+</local:BasePopUp>

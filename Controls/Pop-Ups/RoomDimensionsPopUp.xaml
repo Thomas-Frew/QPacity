@@ -1,0 +1,75 @@
+﻿<local:BasePopUp x:Class="QPacity.RoomDimensionsPopUp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QPacity"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="500">
+
+    <!-- The pop-up toolbar wrapper -->
+    <HeaderedContentControl Style="{StaticResource PopUpWrapper}" Header="Room Dimensions">
+
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <!-- Room Shape Title -->
+            <TextBlock Grid.Row="0" Style="{StaticResource BoldSeparator}" Text="Select Shape"/>
+
+            <!-- Room Shape -->
+            <ComboBox Grid.Row="1" ItemsSource="{Binding RoomShapes}" SelectedIndex="{Binding RoomShapeIndex}"/>
+
+            <!-- Variable Dimensions Title -->
+            
+            <Grid Grid.Row="2" Visibility="{Binding RoomShapeIndex, Converter={local:RoomShapeIndexToRoomParameterVisibilityConverter}, ConverterParameter={StaticResource IntZero}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Style="{StaticResource BoldSeparator}" Text="Length (m)"/>
+                <TextBlock Grid.Column="1" Style="{StaticResource BoldSeparator}" Text="Width (m)"/>
+            </Grid>
+            
+            
+            <TextBlock Grid.Row="2" Style="{StaticResource BoldSeparator}" Text="Radius (m)" Visibility="{Binding RoomShapeIndex, Converter={local:RoomShapeIndexToRoomParameterVisibilityConverter}, ConverterParameter={StaticResource IntOne}}"/>
+
+            <TextBlock Grid.Row="2" Style="{StaticResource BoldSeparator}" Text="Area (m²)" Visibility="{Binding RoomShapeIndex, Converter={local:RoomShapeIndexToRoomParameterVisibilityConverter}, ConverterParameter={StaticResource IntTwo}}"/>
+
+            <!-- Variable Dimensions Inputs -->
+
+            <!-- Rectangular Inputs -->
+            <Grid Grid.Row="3" Visibility="{Binding RoomShapeIndex, Converter={local:RoomShapeIndexToRoomParameterVisibilityConverter}, ConverterParameter={StaticResource IntZero}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0" Style="{StaticResource PlaceholderInput}" Text="{Binding RectangularLength, UpdateSourceTrigger=PropertyChanged}" Tag="Enter"/>
+                <TextBox Grid.Column="1" Style="{StaticResource PlaceholderInput}" Text="{Binding RectangularWidth, UpdateSourceTrigger=PropertyChanged}" Tag="Enter"/>
+            </Grid>
+
+            <!-- Circular Inputs -->
+            <TextBox Grid.Row="3" Style="{StaticResource PlaceholderInput}" Text="{Binding CircularRadius, UpdateSourceTrigger=PropertyChanged}" Tag="Enter" Visibility="{Binding RoomShapeIndex, Converter={local:RoomShapeIndexToRoomParameterVisibilityConverter}, ConverterParameter={StaticResource IntOne}}"/>
+
+            <!-- Custom Inputs -->
+            <TextBox Grid.Row="3" Style="{StaticResource PlaceholderInput}" Text="{Binding CustomArea, UpdateSourceTrigger=PropertyChanged}" Tag="Enter" Visibility="{Binding RoomShapeIndex, Converter={local:RoomShapeIndexToRoomParameterVisibilityConverter}, ConverterParameter={StaticResource IntTwo}}"/>
+
+            <!-- Room Area Title -->
+            <TextBlock Grid.Row="5" Style="{StaticResource BoldSeparator}" Text="Room Area (m²)"/>
+
+            <!-- Room Area Output -->
+            <TextBlock Grid.Row="6" Style="{StaticResource PopUpOutput}" Text="{Binding RoomArea}"/>
+
+        </Grid>
+    </HeaderedContentControl>
+</local:BasePopUp>

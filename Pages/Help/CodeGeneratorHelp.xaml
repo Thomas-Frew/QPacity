@@ -1,0 +1,53 @@
+﻿<Page x:Class="QPacity.CodeGeneratorHelp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QPacity"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700">
+
+    <!-- Help Scroll Bar -->
+    <ScrollViewer Background="{StaticResource CoreLightBrush}" UseLayoutRounding="True" VerticalScrollBarVisibility="Auto">
+        
+        <!-- Help Content -->
+        <StackPanel Margin="5">
+            <HeaderedContentControl Style="{StaticResource IconBlockBody}" Header="&#xf029;">
+                Issue QPacity codes by pressing the Code Generator button, opening its pop-up.
+            </HeaderedContentControl>
+
+            <TextBlock Style="{StaticResource BlockBody}">
+                Enter the name, phone number and email of the guest who requires a QPacity code.
+                Then, press "Issue QPacity Code" to send them an email with their code attached.
+            </TextBlock>
+
+            <HeaderedContentControl Style="{StaticResource ProTipBlock}">
+                <TextBlock Style="{StaticResource BlockBodyLight}">
+                    Do not worry about explaining QPacity to your guests; they should receive a brief tutorial in their QPacity code email.
+                </TextBlock>
+            </HeaderedContentControl>
+
+            <TextBlock Style="{StaticResource BlockBody}">
+                The "Issue QPacity Code" button turns green if the code was successfully sent.
+            </TextBlock>
+
+            <Image Style="{StaticResource BlockImage}" Height="70" Source="/QPacity;component/Resources/Help/Success Button.png"/>
+
+            <HeaderedContentControl Style="{StaticResource WarningBlock}">
+                <TextBlock Style="{StaticResource BlockBodyLight}">
+                    QPacity requires an internet connection to issue codes.
+                    If sending a code fails, the "Issue QPacity Code" button turns red if the code fails to send.
+                </TextBlock>
+            </HeaderedContentControl>
+  
+            <Image Style="{StaticResource BlockImage}" Height="70" Source="/QPacity;component/Resources/Help/Faliure Button.png"/>
+
+            <HeaderedContentControl Style="{StaticResource ProTipBlock}">
+                <TextBlock Style="{StaticResource BlockBodyLight}">
+                    Want to customize your QPacity code with colours and images?
+                    Additional features are coming soon!                
+                </TextBlock>
+            </HeaderedContentControl>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

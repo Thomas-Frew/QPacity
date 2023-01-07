@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:QPacity.Styles">
+
+    <!-- Integers -->
+    <sys:Int32 x:Key="IntZero">0</sys:Int32>
+    <sys:Int32 x:Key="IntOne">1</sys:Int32>
+    <sys:Int32 x:Key="IntTwo">2</sys:Int32>
+    <sys:Int32 x:Key="IntThree">3</sys:Int32>
+    <sys:Int32 x:Key="IntFour">4</sys:Int32>
+    
+    <!-- Booleans -->
+    <sys:Boolean x:Key="BoolTrue">True</sys:Boolean>
+    <sys:Boolean x:Key="BoolFalse">False</sys:Boolean>
+    
+</ResourceDictionary>

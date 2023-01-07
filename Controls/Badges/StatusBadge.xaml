@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="QPacity.StatusBadge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QPacity"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="500">
+    
+    <!-- Animations -->
+    <UserControl.Resources>
+        
+        <!-- Spinner Animation -->
+        <Storyboard x:Key="SpinnerAnimation">
+            <DoubleAnimation
+                    Storyboard.TargetName="Spinner"
+                    Storyboard.TargetProperty="(TextBlock.RenderTransform).(RotateTransform.Angle)"
+                    From="0"
+                    To="360"
+                    Duration="0:0:2"
+                    RepeatBehavior="Forever" />
+        </Storyboard>
+
+        <!-- Flashing Tick Animation, for Sign-In -->
+        <Storyboard x:Key="SignInAnimation">
+            <DoubleAnimation
+                     Storyboard.TargetName="SignInIcon"
+                     Storyboard.TargetProperty="Opacity"
+                     From="0"
+                     To="1"
+                     Duration="0:0:0.4"
+                     AutoReverse="True"
+                     RepeatBehavior="Forever"/>
+        </Storyboard>
+
+        <!-- Flashing Tick Animation, for Sign-Out -->
+        <Storyboard x:Key="SignOutAnimation">
+            <DoubleAnimation
+                     Storyboard.TargetName="SignOutIcon"
+                     Storyboard.TargetProperty="Opacity"
+                     From="0"
+                     To="1"
+                     Duration="0:0:0.4"
+                     AutoReverse="True"
+                     RepeatBehavior="Forever"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid Margin="5">
+        
+        <!-- Scanning Badge -->
+        <Grid Background="{StaticResource CoreBlueBrush}" Visibility="{Binding ScannerStatus, Converter={local:ScannerStatusToStatusBadgeVisibilityConverter}, ConverterParameter={StaticResource IntZero}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Spinner -->
+            <TextBlock Grid.Column="0" Style="{StaticResource CoreIconLight}" Text="&#xf863;" Name="Spinner" RenderTransformOrigin="0.5, 0.5">
+                <TextBlock.RenderTransform>
+                    <RotateTransform Angle="0" />
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            
+            <!-- Animated text -->
+            <TextBlock Grid.Column="1" Style="{StaticResource CoreBody}" Foreground="{StaticResource CoreLightBrush}" HorizontalAlignment="Left" Name="ScanningText" Text="Scanning for QPacity codes..."/>
+        </Grid>
+
+        <!-- Sign-In Badge -->
+        <Grid Background="{StaticResource CoreGreenBrush}" Visibility="{Binding ScannerStatus, Converter={local:ScannerStatusToStatusBadgeVisibilityConverter}, ConverterParameter={StaticResource IntOne}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Flashing Icon -->
+            <TextBlock Grid.Column="0" Style="{StaticResource CoreIconLight}" Text="&#xf00c;" Name="SignInIcon"/>
+
+            <!-- Text -->
+            <TextBlock Grid.Column="1" Style="{StaticResource CoreBody}" Foreground="{StaticResource CoreLightBrush}" HorizontalAlignment="Left" Text="{Binding LatestGuest, Converter={local:LatestGuestToSignInMessageConverter}}"/>
+        </Grid>
+
+        <!-- Sign-Out Badge -->
+        <Grid Background="{StaticResource CoreRedBrush}" Visibility="{Binding ScannerStatus, Converter={local:ScannerStatusToStatusBadgeVisibilityConverter}, ConverterParameter={StaticResource IntTwo}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Flashing Icon -->
+            <TextBlock Grid.Column="0" Style="{StaticResource CoreIconLight}" Text="&#xf00c;" Name="SignOutIcon"/>
+
+            <!-- Text -->
+            <TextBlock Grid.Column="1" Style="{StaticResource CoreBody}" Foreground="{StaticResource CoreLightBrush}" HorizontalAlignment="Left" Text="{Binding LatestGuest, Converter={local:LatestGuestToSignOutMessageConverter}}"/>
+        </Grid>
+
+        <!-- Closed Badge (Capacity) -->
+        <Grid Background="{StaticResource CoreDarkBrush}" Visibility="{Binding ScannerStatus, Converter={local:ScannerStatusToStatusBadgeVisibilityConverter}, ConverterParameter={StaticResource IntThree}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Static Icon -->
+            <TextBlock Grid.Column="0" Style="{StaticResource CoreIconLight}" Text="&#xf52a;"/>
+
+            <!-- Text -->
+            <TextBlock Grid.Column="1" Style="{StaticResource CoreBody}" Foreground="{StaticResource CoreLightBrush}" HorizontalAlignment="Left" Text="Sorry! This room has reached capacity."/>
+        </Grid>
+
+        <!-- Closed Badge (Manual) -->
+        <Grid Background="{StaticResource CoreDarkBrush}" Visibility="{Binding ScannerStatus, Converter={local:ScannerStatusToStatusBadgeVisibilityConverter}, ConverterParameter={StaticResource IntFour}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Static Icon -->
+            <TextBlock Grid.Column="0" Style="{StaticResource CoreIconLight}" Text="&#xf52a;"/>
+
+            <!-- Text -->
+            <TextBlock Grid.Column="1" Style="{StaticResource CoreBody}" Foreground="{StaticResource CoreLightBrush}" HorizontalAlignment="Left" Text="Sorry! This room has been closed to new guests."/>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<Page x:Class="QPacity.ConclusionHelp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QPacity"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700">
+
+    <!-- Help Scroll Bar -->
+    <ScrollViewer Background="{StaticResource CoreLightBrush}" UseLayoutRounding="True" VerticalScrollBarVisibility="Auto">
+        
+        <!-- Help Content -->
+        <StackPanel Margin="5">
+            <TextBlock Style="{StaticResource BlockBody}">
+                That's all you need to know about using QPacity!
+                Enjoy using a more effective COVID check-in system within the comfort of South Australia's COVID restrictions.
+            </TextBlock>
+
+            <HeaderedContentControl Style="{StaticResource ProTipBlock}">
+                <TextBlock Style="{StaticResource BlockBodyLight}">
+                    Have any other questions?
+                    Please contact the QPacity developers at <Hyperlink NavigateUri="https://mail.google.com/mail" RequestNavigate="NavigateLink">qpacityserver@gmail.com</Hyperlink>.
+                </TextBlock>
+            </HeaderedContentControl>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>
